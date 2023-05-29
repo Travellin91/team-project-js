@@ -7,10 +7,8 @@ import './js/header';
 import './js/tumbler-theme';
 
 import './js/auth-modal';
-import './js/categories';
-import './js/gallery-categories';
-import './js/modal-item-home';
 import './js/support-ukraine';
+import './js/shoplist-gallery-categories';
 
 import './js/storage-methods';
 import './js/pagination';
@@ -22,5 +20,5 @@ window.addEventListener('load', function () {
   const conatinerAnimation = document.querySelector('.animation');
   setTimeout(() => {
     conatinerAnimation.style.display = 'none';
-  }, 2000);
+  }, 300);
 });
