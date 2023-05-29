@@ -200,6 +200,14 @@ function cutNameCategory(name) {
   return name;
 }
 
+function removeBookFromList(bookId) {
+  const bookIndex = userShoplist.findIndex(book => book._id === bookId);
+  if (bookIndex !== -1) {
+    userShoplist.splice(bookIndex, 1);
+    localStorage.setItem('user-shop-list', JSON.stringify(userShoplist));
+  }
+}
+
 function onTrashClick(e) {
   const target = e.target.closest('.shopping__btn');
   const page = pagination.getCurrentPage();
@@ -207,19 +215,12 @@ function onTrashClick(e) {
   if (!target) {
     return;
   }
-  const bookEl = target.closest('.shopping__btn').closest('.shopping__card');
-  const seekedId = bookEl.dataset.id.trim();
 
-  const removedElIndexFromStorage = bookList.findIndex(
-    item => item._id === seekedId
-  );
+  const bookEl = target.closest('.shopping__card');
+  const bookId = bookEl.dataset.id.trim();
 
-  bookList.splice(removedElIndexFromStorage, 1);
-  localStoragemethod.save(refs.SHOP_LIST_KEY, bookList);
-
-  bookCount = bookList.length;
-  pagination.setTotalItems(bookCount);
-  pagination.movePageTo(page);
+  removeBookFromList(bookId);
+  renderShoppingList(userShoplist, page);
 
   if (refs.shoppingListEl.childNodes.length === 0) {
     pagination.movePageTo(currentPage - 1);
