@@ -1,24 +1,21 @@
-import axios from 'axios';
-import Notiflix from 'notiflix';
+import './js/header.js';
+import './js/tumbler-theme.js';
 
-import './js/api-books';
+import './js/auth-modal.js';
+import './js/api-books.js';
+import './js/support-ukraine.js';
+import './js/shoplist-gallery-categories.js';
 
-import './js/header';
-import './js/tumbler-theme';
-
-import './js/auth-modal';
-import './js/support-ukraine';
-import './js/shoplist-gallery-categories';
-
-import './js/storage-methods';
-import './js/pagination';
-
-import './js/footer';
-import './js/modal_footer';
+import './js/modal_footer.js';
+import './js/footer.js';
+import './js/pagination.js';
 
 window.addEventListener('load', function () {
   const conatinerAnimation = document.querySelector('.animation');
+  const body = document.querySelector('body');
   setTimeout(() => {
     conatinerAnimation.style.display = 'none';
-  }, 300);
+    body.classList.remove('overlay');
+  }, 2000);
+  body.classList.add('overlay');
 });

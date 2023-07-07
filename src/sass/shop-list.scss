@@ -12,6 +12,31 @@
 
 // Animation during load site
 
+@media screen and (max-width: 1300px) {
+  .shop-list-none {
+    display: none;
+  }
+
+  .align-home-sect {
+    margin-top: 30px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .align-home-sect {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+
+    margin-top: 40px;
+  }
+}
+
+.align-home-sect {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .animation {
   position: fixed;
   top: 0;
@@ -66,4 +91,17 @@
   to {
     transform: rotateZ(360deg);
   }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: not-allowed;
+  pointer-events: all;
+  overflow: hidden;
 }

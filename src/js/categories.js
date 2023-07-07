@@ -71,7 +71,6 @@ function addGalleryMarkupAndChangeFilter() {
 
   varWithActiveValueFilter = targetEl;
 }
-console.log(varWithActiveValueFilter);
 
 // Рендер карток книжок по категоріям
 function addCardsByCategory() {
@@ -89,13 +88,6 @@ function addCardsByCategory() {
 
     addColorToTitle();
     addModal();
-
-    // bookGalleryCard.forEach(book => {
-    //   book.addEventListener('click', e => {
-    //     const bookId = e.currentTarget.id;
-    //     modalOpen(bookId);
-    //   });
-    // });
   });
 }
 
